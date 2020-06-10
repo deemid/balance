@@ -1,0 +1,21 @@
+type Account {
+  id: ID!
+  balance: Int!
+  reservedBalance: Int!
+  virtualBalance: Int!
+  availableBalance: Int!
+}
+
+type Query {
+  account(id: ID!): Account!
+}
+
+type Mutation {
+  updateBalance(id: ID!, amount: Int!): Account!
+  createReservedBalance(id: ID!, amount: Int!): Account!
+  updateReservedBalance(id: ID!, amount: Int!): Account!
+  releaseReservedBalance(id: ID!): Account!
+  updateVirtualBalance(id: ID!, amount: Int!): Account!
+  cancelVirtualBalance(id: ID!): Account!
+  commitVirtualBalance(id: ID!): Account!
+}
